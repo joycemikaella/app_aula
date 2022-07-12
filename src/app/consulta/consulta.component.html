@@ -1,0 +1,34 @@
+<!--<p>{{nome}}</p>
+<input type="text" [(ngModel)]="nome" />
+<input type="text" [(ngModel)]="nome" />
+<hr>
+<p>{{nome}} você tem {{idade}} anos</p>
+
+<button [disabled]="desabilitarBotao" [style.color]="desabilitarBotao ? 'red' : 'blue'">Gravar</button>
+<button (click)="ativar()">Ativar</button>
+
+
+<p *ngFor="let prod of produtos">{{ prod.id }}{{ prod.descricao }}{{ prod.preco }}</p>-->
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Descricao</th>
+            <th>Preço</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prod of produtos">
+            <td>{{ prod.id }}</td>
+            <td>{{ prod.descricao }}</td>
+            <td>{{ prod.preco }}</td>
+            <td><a [routerLink]="['/produto', prod.id]">Editar</a></td>
+
+        </tr>
+
+    </tbody>
+
+
+</table>

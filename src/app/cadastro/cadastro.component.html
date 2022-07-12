@@ -1,0 +1,43 @@
+<!--<h1>Cadastro de contato</h1>
+<p>Oi, {{nome}} você tem {{idade}} de idade</p>
+
+<label>Property bin:</label>
+
+<input type="text" [value]="fruta" change="alterar($event)" />
+
+<label>{{fruta}}</label>
+
+<button (click)="mudar('ola')">event bind</button>-->
+
+<form #f="ngForm" (ngSubmit)="save(f.value)">
+    <br>
+    <input type="text" ngModel name="nome" placeholder="Informe nome"/>
+    <input type="number" ngModel name="idade" placeholder="Informe idade"/>
+    <input type="text" ngModel name="email" placeholder="Informe email"/>
+        <button>Salvar</button>
+</form>
+<br>
+<hr>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contato of contatos">
+            <td>{{ contato.nome }}</td>
+            <td>{{ contato.idade }}</td>
+            <td>{{ contato.email }}</td>
+            
+
+        </tr>
+
+    </tbody>
+
+</table>
+
+
